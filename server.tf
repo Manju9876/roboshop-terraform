@@ -43,30 +43,30 @@ variable "component"{
 #    Name = "catalogue"
 #  }
 #}
-resource "aws_route53_record" "catalogue" {
-  zone_id = "Z06653061K00JAPLVF5JM"
-  name    = "catalogue-dev.manju-devops.online"
-  type    = "A"
-  ttl     = 30
-  records = [aws_instance.catalogue.private_ip]
-}
-
-resource "aws_instance" "mongodb" {
-  ami           = data.aws_ami.centos.image_id
-  instance_type = var.instance_type
-  vpc_security_group_ids = [data.aws_security_group.allow-all.id]
-
-  tags = {
-    Name = "mongodb"
-  }
-}
-resource "aws_route53_record" "mongodb" {
-  zone_id = "Z06653061K00JAPLVF5JM"
-  name    = "mongodb-dev.manju-devops.online"
-  type    = "A"
-  ttl     = 30
-  records = [aws_instance.mongodb.private_ip]
-}
+#resource "aws_route53_record" "catalogue" {
+#  zone_id = "Z06653061K00JAPLVF5JM"
+#  name    = "catalogue-dev.manju-devops.online"
+#  type    = "A"
+#  ttl     = 30
+#  records = [aws_instance.catalogue.private_ip]
+#}
+#
+#resource "aws_instance" "mongodb" {
+#  ami           = data.aws_ami.centos.image_id
+#  instance_type = var.instance_type
+#  vpc_security_group_ids = [data.aws_security_group.allow-all.id]
+#
+#  tags = {
+#    Name = "mongodb"
+#  }
+#}
+#resource "aws_route53_record" "mongodb" {
+#  zone_id = "Z06653061K00JAPLVF5JM"
+#  name    = "mongodb-dev.manju-devops.online"
+#  type    = "A"
+#  ttl     = 30
+#  records = [aws_instance.mongodb.private_ip]
+#}
 
 resource "aws_instance" "user" {
   ami           = data.aws_ami.centos.image_id
