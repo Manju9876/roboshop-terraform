@@ -65,10 +65,11 @@ variable "component"{
 }
 
 
-#resource "aws_route53_record" "frontend" {
-#  zone_id = "Z06653061K00JAPLVF5JM"
-#  name    = "frontend-dev.manju-devops.online"
-#  type    = "A"
-#  ttl     = 30
-#  records = [aws_instance.compone.private_ip]
-#}
+resource "aws_route53_record" "record" {
+  for_each = var.component
+  zone_id = "Z06653061K00JAPLVF5JM"
+  name    = "${each.value["name"]}-dev.manju-devops.online"
+  type    = "A"
+  ttl     = 30
+  records = [aws_instance.instance_name[each.value["name"]].private_ip]
+}
