@@ -25,14 +25,14 @@ variable "component"{
   }
 }
 
-
-resource "aws_route53_record" "frontend" {
-  zone_id = "Z06653061K00JAPLVF5JM"
-  name    = "frontend-dev.manju-devops.online"
-  type    = "A"
-  ttl     = 30
-  records = [aws_instance.component.private_ip]
-}
+#
+#resource "aws_route53_record" "frontend" {
+#  zone_id = "Z06653061K00JAPLVF5JM"
+#  name    = "frontend-dev.manju-devops.online"
+#  type    = "A"
+#  ttl     = 30
+#  records = [aws_instance.compone.private_ip]
+#}
 
 #resource "aws_instance" "catalogue" {
 #  ami           = data.aws_ami.centos.image_id
