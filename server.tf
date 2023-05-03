@@ -14,7 +14,7 @@
         connection {
           type     = "ssh"
           user     = "centos"
-          password = DevOps321
+          password = "DevOps321"
           host     = self.private_ip
        }
 
