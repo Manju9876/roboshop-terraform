@@ -7,7 +7,7 @@ resource "aws_instance" "instance_name" {
 
 
   tags = {
-    Name = var.env != "" ? "${var.component_name}-${env}" :var.component_name
+    Name = local.name
   }
 
 }
