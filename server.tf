@@ -30,7 +30,7 @@
         "rm -rf roboshop-shell",
         "git clone https://github.com/Manju9876/roboshop-shell.git",
         "cd roboshop-shell",
-        "sudo bash ${each.value["name"]}"
+        "sudo bash ${each.value["name"]}.sh ${each.value["password"]}"
       ]
     }
   }
