@@ -10,8 +10,8 @@ resource "aws_instance" "instance_name" {
     Name = var.component_name
   }
 
-
 }
+
 resource "null_resource" "provisioner" {
 
   depends_on = [aws_instance.instance_name, aws_route53_record.record]
@@ -41,4 +41,5 @@ resource "aws_route53_record" "record" {
   ttl      = 30
   records  = [aws_instance.instance_name.private_ip]
 }
+
 
