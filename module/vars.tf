@@ -5,6 +5,3 @@ variable "password" {}
 variable "provisioner" {
   default = false
 }
-
-
-\
